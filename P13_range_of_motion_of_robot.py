@@ -6,11 +6,11 @@ class Solution(object):
         if not (matrix and matrix[0]):
             return None
         viewed_matrix = [[0] * len(matrix[0]) for i in range(len(matrix))]
-        res = DFS(matrix, viewed_matrix, 0, 0, k)
+        res = self.DFS(matrix, viewed_matrix, 0, 0, k)
         return res
 
     def DFS(self, m_matrix, v_matrix, row, col, k):
-        assert matrix and matrix[0]
+        assert m_matrix and m_matrix[0]
         count = 0
         if row < 0 or row >= len(m_matrix) or col < 0 or col >= len(m_matrix[0]) or v_matrix[row][col] == 1:
             return count
