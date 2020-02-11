@@ -41,7 +41,7 @@ class Solution(object):
         if not unsigned:
             if self.index < len(string) and (string[0] == '+' or string[0] == '-'):
                 self.index += 1
-        start = self.ind    ex
+        start = self.index
         while self.index < len(string) and ord(string[self.index]) >= ord('0') and ord(string[self.index]) <= ord('9'):
             self.index += 1
         return start < self.index
