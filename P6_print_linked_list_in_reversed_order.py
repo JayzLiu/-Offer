@@ -1,8 +1,9 @@
+class ListNode(object):
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
 class Solution(object):
-    class ListNode(object):
-        def __init__(self, value):
-            self.value = value
-            self.next = None
 
     def print_node_by_stack(self, node):
         stack = []
@@ -24,7 +25,7 @@ class Solution(object):
         array = [0, 1, 2, 3, 4, 5, 6, 7]
         org_node = None
         for item in reversed(array):
-            new_node = self.ListNode(item)
+            new_node = ListNode(item)
             new_node.next = org_node
             org_node = new_node
         list_node = new_node
