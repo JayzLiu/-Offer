@@ -24,6 +24,7 @@ class Solution(object):
     def test(self):
         array = [0, 1, 2, 3, 4, 5, 6, 7]
         org_node = None
+        new_node = None
         for item in reversed(array):
             new_node = ListNode(item)
             new_node.next = org_node

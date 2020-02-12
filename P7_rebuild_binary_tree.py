@@ -59,6 +59,6 @@ class Solution(object):
             root.right = self.construct_core(preorder[split_index+1:], inorder[split_index+1:])
             return root
 
-if "__name__" == "__main__":
+if __name__ == "__main__":
     s = Solution()
     s.test()
