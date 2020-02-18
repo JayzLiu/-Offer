@@ -1,5 +1,3 @@
-from functools import reduce
-
 class Solutin(object):
     def get_the_digit(self, pos):
         if not (pos and isinstance(pos, int)):
