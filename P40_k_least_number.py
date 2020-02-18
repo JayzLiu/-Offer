@@ -1,6 +1,9 @@
 import heapq
 
 class Solution(object):
+    def __init__(self):
+        self.heap = []
+
     def get_k_least(self, array, k):
         if array == None or len(array) < k:
             return array
@@ -22,22 +25,23 @@ class Solution(object):
             if array[i] < array[end]:
                 small += 1
                 if i != small:
-                    temp = array[small]
-                    array[small] = array[i]
-                    array[i] = temp
+                    array[small], array[i] = array[i], array[small]
         small += 1
-        temp = array[small]
-        array[small] = array[end]
-        array[end] = temp
+        array[small], array[end] = array[end], array[small]
         return small
 
     def get_k_least_by_heapq(self, array, k):
         if array == None or len(array) < k:
             return array
-        heap = []
         for item in array:
-            heapq.heappush(heap, item)
-        return [heapq.heappop(heap) for i in range(k)]
+            if len(self.heap) < k:
+                heapq.heappush(self.heap, -item)
+            else:
+                if -self.heap[0] > item:
+                    heapq.heappushpop(self.heap, -item)
+        k_least = [-heapq.heappop(self.heap) for i in range(len(self.heap))]
+        k_least.reverse()
+        return k_least
 
 
     def test(self):
