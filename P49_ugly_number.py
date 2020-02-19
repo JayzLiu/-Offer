@@ -10,11 +10,11 @@ class Solution(object):
         while index < n:
             cur_num = min(ugly_nums[f2_i]*2, ugly_nums[f3_i]*3, ugly_nums[f5_i]*5)
             ugly_nums.append(cur_num)
-            while ugly_nums[f2_i] * 2 <= ugly_nums[index]:
+            if ugly_nums[f2_i] * 2 == ugly_nums[index]:
                 f2_i += 1
-            while ugly_nums[f3_i] * 3 <= ugly_nums[index]:
+            if ugly_nums[f3_i] * 3 == ugly_nums[index]:
                 f3_i += 1
-            while ugly_nums[f5_i] * 5 <= ugly_nums[index]:
+            if ugly_nums[f5_i] * 5 == ugly_nums[index]:
                 f5_i += 1
             index += 1
         return ugly_nums[-1]
