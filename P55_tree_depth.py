@@ -30,6 +30,7 @@ class Solution(object):
         return self.is_balance(tree.left) and self.is_balance(tree.right)
 
     def is_balance_postorder(self, tree):
+        # preorder
         def is_balance_core(node):
             if not node:
                 return 0
