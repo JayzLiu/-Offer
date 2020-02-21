@@ -18,6 +18,8 @@ class Solution(object):
             print(str(i+n_d), count[i])
 
     def compute_prob(self, n_d):
+        if not isinstance(n_d, int) or n_d < 0:
+            return
         counts = [[0] * (n_d * d_max + 1) for i in range(2)]
         counts[0][1 : d_max + 1] = [1] * d_max
         flag = 0
