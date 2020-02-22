@@ -45,5 +45,16 @@ def print_postorder_array(node):
     else:
         return
 
+def get_node(tree, value):
+    if tree == None:
+        return None
+    if tree.value == value:
+        return tree
+    left = get_node(tree.left, value)
+    if left:
+        return left
+    else:
+        return get_node(tree.right, value) 
+
 
 
